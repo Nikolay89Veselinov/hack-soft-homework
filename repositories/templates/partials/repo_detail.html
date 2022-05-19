@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class='text-center'>Repo</h1>
+<p>{{ repo.url }}</p>
+{% if no_exist %}
+    <h2>This user doesn't own this repo</h2>
+{% else %}
+    <div id="container" style="width: 75%;">
+    <canvas id="visitors-chart"></canvas>
+    </div>
+    {% include 'pie_chart.html' %}
+{% endif %}
+{% endblock %}
